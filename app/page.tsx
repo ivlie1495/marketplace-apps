@@ -1,8 +1,13 @@
-export default function Home() {
+import { getPosts } from '@/server/actions/get-posts'
+
+export default async function Home() {
+	const data = await getPosts()
+
 	return (
 		<main>
-			<h1>Welcome to Next.js!</h1>
-			<p>This is a Next.js app.</p>
+			{data.map((post) => (
+				<p key={post.id}>{post.title}</p>
+			))}
 		</main>
 	)
 }
