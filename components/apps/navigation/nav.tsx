@@ -2,9 +2,9 @@ import { LogIn } from 'lucide-react'
 import Link from 'next/link'
 
 import { auth } from '@/auth'
+import { Button } from '@/components/ui/button'
 
 import UserButton from './user-button'
-import { Button } from '@/components/ui/button'
 
 export default async function Nav() {
 	const session = await auth()
